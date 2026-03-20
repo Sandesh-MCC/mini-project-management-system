@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management System</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>Project Management System</h1>
+    </div>
+
+    <div class="container">
+
+        <div id="project-page">
+            <div class="form-box">
+                <h3>+ Create New Project</h3>
+                <div class="flex">
+                    <input type="text" id="pName" placeholder="Project Name" style="flex: 1;">
+                    <input type="text" id="pDesc" placeholder="Brief Description" style="flex: 2;">
+                    <button onclick="addProject()" class="btn btn-green">Save Project</button>
+                </div>
+            </div>
+
+            <h2>Your Projects</h2>
+            <div id="project-list" class="project-grid">
+            </div>
+        </div>
+
+        <div id="task-page" class="hidden">
+            <button onclick="showProjects()" class="btn" style="background: #666; color: white; margin-bottom: 20px;">←
+                Back to Projects</button>
+
+            <div class="form-box">
+                <h3 id="task-form-title">Add Task to Project</h3>
+                <div class="flex">
+                    <input type="text" id="tTitle" placeholder="Task Title">
+                    <input type="text" id="tDesc" placeholder="Description">
+                    <select id="tPriority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <input type="date" id="tDate">
+                    <button onclick="addTask()" class="btn btn-green">Add Task</button>
+                </div>
+            </div>
+
+            <div class="flex" style="justify-content: space-between; margin-bottom: 15px;">
+                <h2>Project Tasks</h2>
+                <div>
+                    <label>Filter Status: </label>
+                    <select id="statusFilter" onchange="loadTasks()">
+                        <option value="">All</option>
+                        <option value="todo">To Do</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task Details</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Due Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="task-list">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
