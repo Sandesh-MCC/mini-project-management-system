@@ -1,4 +1,4 @@
-Mini Project Management System (MERN Stack)
+Mini Project Management System 
 
 A professional, lightweight, and fully functional Project Management Tool built as part of the. This application allows users to manage projects and their associated tasks with features like real-time updates, filtering, and server-side pagination.
 
